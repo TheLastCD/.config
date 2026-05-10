@@ -1,0 +1,36 @@
+general {
+    colors = true
+    interval = 5
+}
+
+tztime local {
+    min_width = 30
+    format = "%H:%M"
+}
+
+battery 0 {
+        format = "%percentage"
+        format_down = "No battery"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+cpu_usage {
+  format = "%usage"
+  # Optional: Define thresholds for color changes
+  # degraded_threshold = 90
+  # max_threshold = 95
+}
+
+volume master {
+    format = "%volume"
+    format_muted = "muted (%volume)"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+order += "volume master"
+order += "cpu_usage"
+order += "battery 0"
+order += "tztime local"
