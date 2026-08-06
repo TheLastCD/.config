@@ -61,7 +61,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier $mod normal 
+#floating_modifier $mod
 focus_follows_mouse no
 # bindcode $mod pointer button1 move
 tiling_drag off 
